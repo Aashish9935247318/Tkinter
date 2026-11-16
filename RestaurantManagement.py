@@ -89,7 +89,7 @@ class RestaurentManagement:
 
     def setup_background(self, root):
         bg_width, bg_height = 800, 600
-        canvas = tk.Canvas(root, width=bg width, height=bg height)
+        canvas = tk.Canvas(root, width=bg_width, height=bg_height)
         canvas.pack()
 
         original_image = tk.PhotoImage(file="background.png")
@@ -107,7 +107,7 @@ class RestaurentManagement:
         symbol = "₹" if currency == "INR" else "$"
         rate = self.excahnge_rate if currency == "INR" else 1
 
-        for item, label in self.menu_items[item] * rate
+        for item, label in self.menu_labels.items():
             price = self.menu_items[item] * rate
             label.config(text=f"{item} ({symbol}{price}):")
 
@@ -140,6 +140,10 @@ class RestaurentManagement:
 
 if __name__ == "__main__":
   root = tk.Tk()
-  app = RestaurantOrderManagement(root)
-  root.geometry("800x600") # Set the size of the window
-  root.mainloop() # Start the GUI loop
+
+  app = RestaurentOrderMangement(root)
+
+  root.geometry("800x600") 
+
+
+  root.mainloop()
